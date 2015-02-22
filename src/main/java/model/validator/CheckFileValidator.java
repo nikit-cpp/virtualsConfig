@@ -1,4 +1,4 @@
-package virtualsConfig.validator;
+package model.validator;
 
 import java.io.File;
 import java.io.IOException;

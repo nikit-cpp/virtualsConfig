@@ -1,4 +1,4 @@
-package virtualsConfig;
+package model;
 
 public class Snapshot {
 	private String name;

@@ -1,4 +1,4 @@
-package virtualsConfig;
+package model;
 
 import java.util.List;
 
@@ -9,15 +9,16 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 // Алиас приказывает XStream (де)сериализовывать <virtualConfig> вместо <com.website.packagename.VirtualsConfig>
 @XStreamAlias("virtualConfig")
-public class VirtualsConfig {
+public class VirtualsXml {
+	// Приказываем хибернейт валидатору провести валидацию непримитивного типа WorkstationHypervisorConfig
+	// такой аннотацией можно помечать непримитивные типы, их коллекции или массивы
+	@Valid
 	private WorkstationHypervisorConfig workstationHypervisor;
 	
-	// Приказываем хибернейт валидатору провести валидацию непримитивного типа VmRunWorkstation
-	// такой аннотацией можно помечать непримитивные типы, их коллекции или массивы
 	@Valid
 	private List<VmRunWorkstation> workstations;
 	
-	public VirtualsConfig(WorkstationHypervisorConfig workstationHypervisor,
+	public VirtualsXml(WorkstationHypervisorConfig workstationHypervisor,
 			List<VmRunWorkstation> workstations) {
 		super();
 		this.workstationHypervisor = workstationHypervisor;

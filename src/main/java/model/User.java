@@ -1,4 +1,4 @@
-package virtualsConfig;
+package model;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 

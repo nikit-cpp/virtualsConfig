@@ -1,4 +1,4 @@
-package virtualsConfig;
+package model;
 
 public class Agent {
 	private String guestAgentExePath;

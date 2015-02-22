@@ -1,11 +1,11 @@
-package virtualsConfig;
+package model;
 
-import java.io.File;
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.constraints.NotNull;
 
-import virtualsConfig.validator.CheckFile;
+import model.validator.CheckFile;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
@@ -27,7 +27,7 @@ public class VmRunWorkstation {
 	private Agent agent;
 	private User user;
 	@NotNull(message="Нет снапшотов")
-	private List<Snapshot> snapshots;
+	private Set<Snapshot> snapshots;
 	private List<WorkstationEthernetDevice> ethernets;
 	
 	public VmRunWorkstation(String name, Agent agent, User user,
@@ -48,10 +48,10 @@ public class VmRunWorkstation {
 	public User getUser() {
 		return user;
 	}
-	public List<Snapshot> getSnapshots() {
+	public Set<Snapshot> getSnapshots() {
 		return snapshots;
 	}
-	public void setSnapshots(List<Snapshot> snapshots) {
+	public void setSnapshots(Set<Snapshot> snapshots) {
 		this.snapshots = snapshots;
 	}
 

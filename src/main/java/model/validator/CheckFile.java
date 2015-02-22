@@ -1,4 +1,4 @@
-package virtualsConfig.validator;
+package model.validator;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

@@ -15,10 +15,10 @@ import javax.validation.ValidationException;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import virtualsConfig.User;
-import virtualsConfig.VirtualsConfig;
-import virtualsConfig.VmRunWorkstation;
-import virtualsConfig.WorkstationEthernetDevice;
+import model.User;
+import model.VirtualsXml;
+import model.VmRunWorkstation;
+import model.WorkstationEthernetDevice;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -27,10 +27,10 @@ public class MainReadVirtualConfig {
 	public static void main(String[] args) throws FileNotFoundException {		
 		XStream xstream = new XStream();
 		
-		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsConfig.class};
+		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsXml.class};
 		xstream.processAnnotations(annotated);
 		InputStream is = new FileInputStream(MainWriteVirtualConfig.VIRTUALS_XML);
-		VirtualsConfig c = (VirtualsConfig) xstream.fromXML(is);
+		VirtualsXml c = (VirtualsXml) xstream.fromXML(is);
         
 		System.out.println(c);
 		
