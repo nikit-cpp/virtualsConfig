@@ -25,7 +25,7 @@ public class MainWriteVirtualConfig {
 		WorkstationEthernetDevice e = new WorkstationEthernetDevice("1000", "vmnet0");
 		List<WorkstationEthernetDevice> eths = new ArrayList<WorkstationEthernetDevice>();
 		eths.add(e);
-		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", "C:\\vms\\ClearUnit.vmx", a, u, eths);
+		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", "C:\\vms\\ClearUnit.vmx", 10, a, u, eths);
 		
 		WorkstationHypervisorConfig h = new WorkstationHypervisorConfig("C:\\Program Files\\VMware Vix\\vmrun.exe");
 		

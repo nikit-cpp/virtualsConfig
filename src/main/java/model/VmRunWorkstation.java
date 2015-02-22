@@ -2,10 +2,15 @@ package model;
 
 import java.util.List;
 import java.util.Set;
+
 import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotEmpty;
+
 import model.validator.CheckFile;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
@@ -14,6 +19,10 @@ public class VmRunWorkstation {
 	@XStreamAsAttribute
 	@NotEmpty
 	private String name;
+	
+	@Min(0)
+	@XStreamAsAttribute
+	private int sleepBeforeDesktopPresent;
 	
 	@XStreamAsAttribute
 	@CheckFile
@@ -34,11 +43,12 @@ public class VmRunWorkstation {
 	@Valid
 	private List<WorkstationEthernetDevice> ethernets;
 	
-	public VmRunWorkstation(String name, String vmxFile, Agent agent, User user,
+	public VmRunWorkstation(String name, String vmxFile, int sleepBeforeDesktopPresent, Agent agent, User user,
 			List<WorkstationEthernetDevice> ethernets) {
 		super();
 		this.name = name;
 		this.vmxFile = vmxFile;
+		this.sleepBeforeDesktopPresent = sleepBeforeDesktopPresent;
 		this.agent = agent;
 		this.user = user;
 		this.ethernets = ethernets;
@@ -47,6 +57,11 @@ public class VmRunWorkstation {
 	public String getName() {
 		return name;
 	}
+	
+	public int getSleepBeforeDesktopPresent() {
+		return sleepBeforeDesktopPresent;
+	}
+
 	public Agent getAgent() {
 		return agent;
 	}
