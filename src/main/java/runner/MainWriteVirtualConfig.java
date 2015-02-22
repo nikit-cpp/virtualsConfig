@@ -1,4 +1,4 @@
-package virtualsConfig;
+package runner;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,6 +10,13 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.ValidationException;
 import javax.validation.Validator;
+
+import virtualsConfig.Agent;
+import virtualsConfig.User;
+import virtualsConfig.VirtualsConfig;
+import virtualsConfig.VmRunWorkstation;
+import virtualsConfig.WorkstationEthernetDevice;
+import virtualsConfig.WorkstationHypervisorConfig;
 
 import com.thoughtworks.xstream.XStream;
 
