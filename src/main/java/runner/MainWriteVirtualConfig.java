@@ -21,6 +21,8 @@ import virtualsConfig.WorkstationHypervisorConfig;
 import com.thoughtworks.xstream.XStream;
 
 public class MainWriteVirtualConfig {
+	
+	public static final String VIRTUALS_XML = "target/virtuals.xml";
 
 	public static void main(String[] args) throws FileNotFoundException {
 		User u = new User("mylogin", "myPassword");
@@ -41,7 +43,7 @@ public class MainWriteVirtualConfig {
 		
 		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsConfig.class};
 		xstream.processAnnotations(annotated);
-		OutputStream os = new FileOutputStream("target/virtuals.xml");
+		OutputStream os = new FileOutputStream(VIRTUALS_XML);
 		xstream.toXML(c, os);
 	}
 

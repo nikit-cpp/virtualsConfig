@@ -29,10 +29,14 @@ public class MainReadVirtualConfig {
 		
 		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsConfig.class};
 		xstream.processAnnotations(annotated);
-		InputStream is = new FileInputStream("target/virtuals.xml");
+		InputStream is = new FileInputStream(MainWriteVirtualConfig.VIRTUALS_XML);
 		VirtualsConfig c = (VirtualsConfig) xstream.fromXML(is);
         
 		System.out.println(c);
+		
+		c.getWorkstations().get(0).setVmxFile("target/virtuals.xml2");
+		
+		
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 		validate(c, validator);		
 	}

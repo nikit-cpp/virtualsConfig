@@ -1,8 +1,11 @@
 package virtualsConfig;
 
+import java.io.File;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
+
+import virtualsConfig.validator.CheckFile;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
@@ -18,6 +21,9 @@ public class VmRunWorkstation {
 
 	@XStreamAsAttribute
 	private String name;
+	@XStreamAsAttribute
+	@CheckFile("lulz stub")
+	private String vmxFile;
 	private Agent agent;
 	private User user;
 	@NotNull(message="Нет снапшотов")
@@ -51,5 +57,13 @@ public class VmRunWorkstation {
 
 	public List<WorkstationEthernetDevice> getEthernets() {
 		return ethernets;
+	}
+
+	public String getVmxFile() {
+		return vmxFile;
+	}
+
+	public void setVmxFile(String vmxFile) {
+		this.vmxFile = vmxFile;
 	}
 }
