@@ -8,7 +8,12 @@ import javax.validation.Payload;
 
 import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.*;
-
+/**
+ * Проверяет существование файла, представленного строкой
+ * @see http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/#validator-customconstraints-simple
+ * @author nik
+ *
+ */
 @Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 @Constraint(validatedBy = CheckFileValidator.class)
