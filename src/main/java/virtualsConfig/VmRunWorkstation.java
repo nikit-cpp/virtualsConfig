@@ -22,7 +22,7 @@ public class VmRunWorkstation {
 	@XStreamAsAttribute
 	private String name;
 	@XStreamAsAttribute
-	@CheckFile("lulz stub")
+	@CheckFile(message=".vmx файл не найден")
 	private String vmxFile;
 	private Agent agent;
 	private User user;

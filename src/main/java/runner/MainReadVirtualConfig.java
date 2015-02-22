@@ -34,7 +34,7 @@ public class MainReadVirtualConfig {
         
 		System.out.println(c);
 		
-		c.getWorkstations().get(0).setVmxFile("target/virtuals.xml2");
+		//c.getWorkstations().get(0).setVmxFile("target/virtuals.xml2");
 		
 		
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();

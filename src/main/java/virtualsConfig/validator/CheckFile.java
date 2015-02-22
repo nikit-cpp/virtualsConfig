@@ -14,13 +14,11 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Constraint(validatedBy = CheckFileValidator.class)
 public @interface CheckFile {
 
-    String message() default "Файл не найден";
+    String message() default "File not found";
 
     Class<?>[] groups() default { };
 
     Class<? extends Payload>[] payload() default { };
-
-    String value();
 
     @Target({ FIELD, METHOD, PARAMETER, ANNOTATION_TYPE })
     @Retention(RUNTIME)
