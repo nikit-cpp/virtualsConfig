@@ -22,7 +22,7 @@ public class VmRunWorkstation {
 	@XStreamAsAttribute
 	private String name;
 	@XStreamAsAttribute
-	@CheckFile(message=".vmx файл не найден")
+	@CheckFile
 	private String vmxFile;
 	private Agent agent;
 	private User user;
