@@ -57,4 +57,11 @@ public class VmRunWorkstation {
 		return vmxFile;
 	}
 
+	@Override
+	public String toString() {
+		return "VmRunWorkstation [name=" + name + ", vmxFile=" + vmxFile
+				+ ", agent=" + agent + ", user=" + user + ", snapshots="
+				+ snapshots + ", ethernets=" + ethernets + "]";
+	}
+
 }
