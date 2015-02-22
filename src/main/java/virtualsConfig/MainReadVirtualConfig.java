@@ -27,8 +27,8 @@ public class MainReadVirtualConfig {
 		InputStream is = new FileInputStream("target/virtuals.xml");
 		VirtualsConfig c = (VirtualsConfig) xstream.fromXML(is);
         
+		System.out.println(c);
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-
 		validate(c, validator);		
 	}
 	

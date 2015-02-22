@@ -4,6 +4,11 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("ethernet")
 public class WorkstationEthernetDevice {
+	@Override
+	public String toString() {
+		return "WorkstationEthernetDevice [name=" + name + ", vmnet=" + vmnet
+				+ "]";
+	}
 	private String name;
 	private String vmnet;
 	

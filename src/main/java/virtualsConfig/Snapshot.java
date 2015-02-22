@@ -11,4 +11,9 @@ public class Snapshot {
 	public String getName() {
 		return name;
 	}
+
+	@Override
+	public String toString() {
+		return "Snapshot [name=" + name + "]";
+	}
 }

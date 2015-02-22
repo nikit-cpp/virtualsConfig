@@ -2,15 +2,25 @@ package virtualsConfig;
 
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @XStreamAlias("workstation")
 public class VmRunWorkstation {
+	@Override
+	public String toString() {
+		return "VmRunWorkstation [name=" + name + ", agent=" + agent
+				+ ", user=" + user + ", snapshots=" + snapshots
+				+ ", ethernets=" + ethernets + "]";
+	}
+
 	@XStreamAsAttribute
 	private String name;
 	private Agent agent;
 	private User user;
+	@NotNull(message="Нет снапшотов")
 	private List<Snapshot> snapshots;
 	private List<WorkstationEthernetDevice> ethernets;
 	

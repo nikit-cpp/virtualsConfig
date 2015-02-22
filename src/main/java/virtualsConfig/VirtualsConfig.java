@@ -6,6 +6,12 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("virtualConfig")
 public class VirtualsConfig {
+	@Override
+	public String toString() {
+		return "VirtualsConfig [workstationHypervisor=" + workstationHypervisor
+				+ ", workstations=" + workstations + "]";
+	}
+
 	private WorkstationHypervisorConfig workstationHypervisor;
 	private List<VmRunWorkstation> workstations;
 	

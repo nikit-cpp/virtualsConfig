@@ -31,4 +31,11 @@ public class Agent {
 	public String getGuestJavaExe() {
 		return guestJavaExe;
 	}
+	@Override
+	public String toString() {
+		return "Agent [guestAgentExePath=" + guestAgentExePath
+				+ ", guestAgentProperties=" + guestAgentProperties
+				+ ", hostLogsDir=" + hostLogsDir + ", guestLogsDir="
+				+ guestLogsDir + ", guestJavaExe=" + guestJavaExe + "]";
+	}
 }
