@@ -6,6 +6,8 @@ import java.util.Set;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import model.validator.CheckFile;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
@@ -21,6 +23,7 @@ public class VmRunWorkstation {
 	@CheckFile
 	private String vmxFile;
 	
+	// Приказываем провалидировать Agent, если он не null
 	@Valid
 	private Agent agent;
 	

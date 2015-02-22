@@ -12,6 +12,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class VirtualsXml {
 	// Приказываем хибернейт валидатору провести валидацию непримитивного типа WorkstationHypervisorConfig
 	// такой аннотацией можно помечать непримитивные типы, их коллекции или массивы
+	// Валидация производится, если поле не null
 	@Valid
 	private WorkstationHypervisorConfig workstationHypervisor;
 	

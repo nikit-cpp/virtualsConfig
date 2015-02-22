@@ -2,14 +2,16 @@ package model;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("ethernet")
 public class WorkstationEthernetDevice {
-	@NotNull
+	@NotEmpty
 	private String name;
 	
-	@NotNull
+	@NotEmpty
 	private String vmnet;
 	
 	public WorkstationEthernetDevice(String name, String vmnet) {
