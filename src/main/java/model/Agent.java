@@ -1,10 +1,21 @@
 package model;
 
+import javax.validation.constraints.NotNull;
+
 public class Agent {
+	@NotNull
 	private String guestAgentExePath;
+	
+	@NotNull
 	private String guestAgentProperties;
+	
+	@NotNull
 	private String hostLogsDir;
+	
+	@NotNull
 	private String guestLogsDir;
+	
+	@NotNull
 	private String guestJavaExe;
 	
 	public Agent(String guestAgentExePath, String guestAgentProperties, String hostLogsDir,
