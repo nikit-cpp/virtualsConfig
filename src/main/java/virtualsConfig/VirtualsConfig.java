@@ -2,8 +2,12 @@ package virtualsConfig;
 
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
+// Алиас приказывает XStream (де)сериализовывать <virtualConfig> вместо <com.website.packagename.VirtualsConfig>
 @XStreamAlias("virtualConfig")
 public class VirtualsConfig {
 	@Override
@@ -13,6 +17,10 @@ public class VirtualsConfig {
 	}
 
 	private WorkstationHypervisorConfig workstationHypervisor;
+	
+	// Приказываем хибернейт валидатору провести валидацию непримитивного типа VmRunWorkstation
+	// такой аннотацией можно помечать непримитивные типы, их коллекции или массивы
+	@Valid
 	private List<VmRunWorkstation> workstations;
 	
 	public VirtualsConfig(WorkstationHypervisorConfig workstationHypervisor,
