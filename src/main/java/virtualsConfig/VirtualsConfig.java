@@ -10,12 +10,6 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 // Алиас приказывает XStream (де)сериализовывать <virtualConfig> вместо <com.website.packagename.VirtualsConfig>
 @XStreamAlias("virtualConfig")
 public class VirtualsConfig {
-	@Override
-	public String toString() {
-		return "VirtualsConfig [workstationHypervisor=" + workstationHypervisor
-				+ ", workstations=" + workstations + "]";
-	}
-
 	private WorkstationHypervisorConfig workstationHypervisor;
 	
 	// Приказываем хибернейт валидатору провести валидацию непримитивного типа VmRunWorkstation
@@ -38,4 +32,9 @@ public class VirtualsConfig {
 		return workstations;
 	}
 	
+	@Override
+	public String toString() {
+		return "VirtualsConfig [workstationHypervisor=" + workstationHypervisor
+				+ ", workstations=" + workstations + "]";
+	}
 }
