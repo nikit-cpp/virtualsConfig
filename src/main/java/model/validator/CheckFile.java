@@ -11,6 +11,7 @@ import static java.lang.annotation.RetentionPolicy.*;
 /**
  * Проверяет существование файла, представленного строкой
  * @see http://docs.jboss.org/hibernate/validator/5.0/reference/en-US/html_single/#validator-customconstraints-simple
+ * @see http://habrahabr.ru/post/68318/
  * @author nik
  *
  */
