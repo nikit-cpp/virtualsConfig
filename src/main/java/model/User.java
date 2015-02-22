@@ -1,11 +1,16 @@
 package model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 public class User {
 	@XStreamAsAttribute
+	@NotEmpty
 	private String login;
+	
 	@XStreamAsAttribute
+	@NotEmpty
 	private String password;
 
 	public User(String login, String password) {

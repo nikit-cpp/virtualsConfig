@@ -1,10 +1,7 @@
 package model;
 
 import java.util.List;
-
 import javax.validation.Valid;
-import javax.validation.constraints.Size;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 // Алиас приказывает XStream (де)сериализовывать <virtualConfig> вместо <com.website.packagename.VirtualsConfig>

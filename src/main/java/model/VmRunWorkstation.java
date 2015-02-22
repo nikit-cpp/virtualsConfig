@@ -2,21 +2,17 @@ package model;
 
 import java.util.List;
 import java.util.Set;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.NotEmpty;
-
 import model.validator.CheckFile;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @XStreamAlias("workstation")
 public class VmRunWorkstation {
 	@XStreamAsAttribute
-	@NotNull
+	@NotEmpty
 	private String name;
 	
 	@XStreamAsAttribute

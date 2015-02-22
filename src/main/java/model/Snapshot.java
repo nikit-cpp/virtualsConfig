@@ -1,10 +1,10 @@
 package model;
 
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Snapshot {
 	
-	@NotNull
+	@NotEmpty
 	private String name;
 	
 	public Snapshot(String name) {

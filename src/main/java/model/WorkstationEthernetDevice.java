@@ -1,9 +1,7 @@
 package model;
 
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("ethernet")

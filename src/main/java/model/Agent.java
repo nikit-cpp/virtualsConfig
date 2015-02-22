@@ -1,21 +1,21 @@
 package model;
 
-import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Agent {
-	@NotNull
+	@NotEmpty
 	private String guestAgentExePath;
 	
-	@NotNull
+	@NotEmpty
 	private String guestAgentProperties;
 	
-	@NotNull
+	@NotEmpty
 	private String hostLogsDir;
 	
-	@NotNull
+	@NotEmpty
 	private String guestLogsDir;
 	
-	@NotNull
+	@NotEmpty
 	private String guestJavaExe;
 	
 	public Agent(String guestAgentExePath, String guestAgentProperties, String hostLogsDir,
