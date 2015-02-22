@@ -32,10 +32,7 @@ public class MainReadVirtualConfig {
 		InputStream is = new FileInputStream(MainWriteVirtualConfig.VIRTUALS_XML);
 		VirtualsXml c = (VirtualsXml) xstream.fromXML(is);
         
-		System.out.println(c);
-		
-		//c.getWorkstations().get(0).setVmxFile("target/virtuals.xml2");
-		
+		System.out.println(c);		
 		
         Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 		validate(c, validator);		
@@ -46,7 +43,7 @@ public class MainReadVirtualConfig {
         Set<ConstraintViolation<Object>> constraintViolations = validator
                 .validate(object);
         if(constraintViolations.size()!=0){
-            System.err.println("[Hibernate Validator] Validation erors:");
+            System.err.println("Hibernate Validator detects " + constraintViolations.size() + " errors:");
             for (ConstraintViolation<Object> cv : constraintViolations)
                 System.err.println(String.format(
                         "property: [%s], value: [%s], message: [%s]",

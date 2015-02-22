@@ -1,21 +1,12 @@
 package runner;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.ValidationException;
-import javax.validation.Validator;
-
 import model.Agent;
-import model.Snapshot;
 import model.User;
 import model.VirtualsXml;
 import model.VmRunWorkstation;
@@ -34,7 +25,7 @@ public class MainWriteVirtualConfig {
 		WorkstationEthernetDevice e = new WorkstationEthernetDevice("1000", "vmnet0");
 		List<WorkstationEthernetDevice> eths = new ArrayList<WorkstationEthernetDevice>();
 		eths.add(e);
-		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", a, u, eths);
+		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", "C:\\vms\\ClearUnit.vmx", a, u, eths);
 		
 		WorkstationHypervisorConfig h = new WorkstationHypervisorConfig("C:\\Program Files\\VMware Vix\\vmrun.exe");
 		

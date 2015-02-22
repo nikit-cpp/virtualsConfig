@@ -1,5 +1,7 @@
 package model;
 
+import model.validator.CheckFile;
+
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 public class WorkstationHypervisorConfig {
@@ -14,6 +16,7 @@ public class WorkstationHypervisorConfig {
 	}
 	
 	@XStreamAsAttribute
+	@CheckFile
 	private String vmRunExe;
 
 	public String getVmRunExe() {

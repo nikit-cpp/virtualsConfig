@@ -12,13 +12,6 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
 @XStreamAlias("workstation")
 public class VmRunWorkstation {
-	@Override
-	public String toString() {
-		return "VmRunWorkstation [name=" + name + ", agent=" + agent
-				+ ", user=" + user + ", snapshots=" + snapshots
-				+ ", ethernets=" + ethernets + "]";
-	}
-
 	@XStreamAsAttribute
 	private String name;
 	@XStreamAsAttribute
@@ -26,14 +19,15 @@ public class VmRunWorkstation {
 	private String vmxFile;
 	private Agent agent;
 	private User user;
-	@NotNull(message="Нет снапшотов")
+	@NotNull(message="Забыл инициализировать снапшоты?")
 	private Set<Snapshot> snapshots;
 	private List<WorkstationEthernetDevice> ethernets;
 	
-	public VmRunWorkstation(String name, Agent agent, User user,
+	public VmRunWorkstation(String name, String vmxFile, Agent agent, User user,
 			List<WorkstationEthernetDevice> ethernets) {
 		super();
 		this.name = name;
+		this.vmxFile = vmxFile;
 		this.agent = agent;
 		this.user = user;
 		this.ethernets = ethernets;
@@ -63,7 +57,4 @@ public class VmRunWorkstation {
 		return vmxFile;
 	}
 
-	public void setVmxFile(String vmxFile) {
-		this.vmxFile = vmxFile;
-	}
 }
