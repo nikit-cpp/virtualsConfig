@@ -18,6 +18,7 @@ public class VmRunWorkstation {
 	@CheckFile
 	private String vmxFile;
 	private Agent agent;
+	@NotNull(message="User must be present")
 	private User user;
 	@NotNull(message="Забыл инициализировать снапшоты?")
 	private Set<Snapshot> snapshots;
