@@ -1,6 +1,10 @@
 package model;
 
+import javax.validation.constraints.NotNull;
+
 public class Snapshot {
+	
+	@NotNull
 	private String name;
 	
 	public Snapshot(String name) {

@@ -1,15 +1,15 @@
 package model;
 
+import javax.validation.constraints.NotNull;
+
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("ethernet")
 public class WorkstationEthernetDevice {
-	@Override
-	public String toString() {
-		return "WorkstationEthernetDevice [name=" + name + ", vmnet=" + vmnet
-				+ "]";
-	}
+	@NotNull
 	private String name;
+	
+	@NotNull
 	private String vmnet;
 	
 	public WorkstationEthernetDevice(String name, String vmnet) {
@@ -23,4 +23,11 @@ public class WorkstationEthernetDevice {
 	public String getVmnet() {
 		return vmnet;
 	}
+	
+	@Override
+	public String toString() {
+		return "WorkstationEthernetDevice [name=" + name + ", vmnet=" + vmnet
+				+ "]";
+	}
+
 }
