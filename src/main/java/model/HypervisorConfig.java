@@ -4,13 +4,13 @@ import model.validator.CheckFile;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 
-public class WorkstationHypervisorConfig {
+public class HypervisorConfig {
 	@Override
 	public String toString() {
 		return "WorkstationHypervisorConfig [vmRunExe=" + vmRunExe + "]";
 	}
 
-	public WorkstationHypervisorConfig(String vmRunExe) {
+	public HypervisorConfig(String vmRunExe) {
 		super();
 		this.vmRunExe = vmRunExe;
 	}

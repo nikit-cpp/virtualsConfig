@@ -28,11 +28,14 @@ public class CheckFileValidator implements ConstraintValidator<CheckFile, String
 	        if(!probe.exists()){
 	        	isValid = false;
 	        }
+	        if(!probe.isFile()){
+                isValid = false;
+            }
         }
         
         if ( !isValid ) {
             constraintContext.disableDefaultConstraintViolation();
-            constraintContext.buildConstraintViolationWithTemplate("File '"+canonicalPath + "' not found")
+            constraintContext.buildConstraintViolationWithTemplate("File '"+canonicalPath + "' not found or this is directory")
             .addConstraintViolation();
         }
         

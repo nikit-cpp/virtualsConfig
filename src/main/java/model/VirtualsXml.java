@@ -11,19 +11,19 @@ public class VirtualsXml {
 	// такой аннотацией можно помечать непримитивные типы, их коллекции или массивы
 	// Валидация производится, если поле не null
 	@Valid
-	private WorkstationHypervisorConfig workstationHypervisor;
+	private HypervisorConfig workstationHypervisor;
 	
 	@Valid
 	private List<VmRunWorkstation> workstations;
 	
-	public VirtualsXml(WorkstationHypervisorConfig workstationHypervisor,
+	public VirtualsXml(HypervisorConfig workstationHypervisor,
 			List<VmRunWorkstation> workstations) {
 		super();
 		this.workstationHypervisor = workstationHypervisor;
 		this.workstations = workstations;
 	}
 
-	public WorkstationHypervisorConfig getWorkstationHypervisor() {
+	public HypervisorConfig getWorkstationHypervisor() {
 		return workstationHypervisor;
 	}
 

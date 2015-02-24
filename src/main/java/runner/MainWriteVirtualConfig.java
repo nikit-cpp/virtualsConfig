@@ -6,12 +6,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import model.Agent;
+import model.OS;
 import model.User;
 import model.VirtualsXml;
 import model.VmRunWorkstation;
 import model.WorkstationEthernetDevice;
-import model.WorkstationHypervisorConfig;
+import model.HypervisorConfig;
 
 import com.thoughtworks.xstream.XStream;
 
@@ -25,9 +27,10 @@ public class MainWriteVirtualConfig {
 		WorkstationEthernetDevice e = new WorkstationEthernetDevice("1000", "vmnet0");
 		List<WorkstationEthernetDevice> eths = new ArrayList<WorkstationEthernetDevice>();
 		eths.add(e);
-		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", "C:\\vms\\ClearUnit.vmx", 10, a, u, eths);
+		OS os = OS.WINDOWS;
+		VmRunWorkstation w = new VmRunWorkstation("ClearUnit", "C:\\vms\\ClearUnit.vmx", os, 10, a, u, eths);
 		
-		WorkstationHypervisorConfig h = new WorkstationHypervisorConfig("C:\\Program Files\\VMware Vix\\vmrun.exe");
+		HypervisorConfig h = new HypervisorConfig("C:\\Program Files\\VMware Vix\\vmrun.exe");
 		
 		List<VmRunWorkstation> workstations = new ArrayList<VmRunWorkstation>();
 		workstations.add(w);
@@ -38,8 +41,8 @@ public class MainWriteVirtualConfig {
 		
 		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsXml.class};
 		xstream.processAnnotations(annotated);
-		OutputStream os = new FileOutputStream(VIRTUALS_XML);
-		xstream.toXML(c, os);
+		OutputStream out = new FileOutputStream(VIRTUALS_XML);
+		xstream.toXML(c, out);
 		
 		System.out.println("Writed to " + new File(VIRTUALS_XML).getCanonicalPath());
 	}

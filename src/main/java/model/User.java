@@ -7,25 +7,25 @@ import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 public class User {
 	@XStreamAsAttribute
 	@NotEmpty
-	private String login;
+	private String name;
 	
 	@XStreamAsAttribute
 	@NotEmpty
 	private String password;
 
-	public User(String login, String password) {
+	public User(String name, String password) {
 		super();
-		this.login = login;
+		this.name = name;
 		this.password = password;
 	}
 	public String getLogin() {
-		return login;
+		return name;
 	}
 	public String getPassword() {
 		return password;
 	}
 	@Override
 	public String toString() {
-		return "User [login=" + login + ", password=" + password + "]";
+		return "User [name=" + name + ", password=" + password + "]";
 	}
 }

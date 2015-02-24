@@ -25,8 +25,12 @@ public class VmRunWorkstation {
 	private int sleepBeforeDesktopPresent;
 	
 	@XStreamAsAttribute
+	@NotNull
+	private OS os;
+	
+	@XStreamAsAttribute
 	@CheckFile
-	private String vmxFile;
+	private String vmxPath;
 	
 	// Приказываем провалидировать Agent, если он не null
 	@Valid
@@ -43,11 +47,12 @@ public class VmRunWorkstation {
 	@Valid
 	private List<WorkstationEthernetDevice> ethernets;
 	
-	public VmRunWorkstation(String name, String vmxFile, int sleepBeforeDesktopPresent, Agent agent, User user,
+	public VmRunWorkstation(String name, String vmxPath, OS os, int sleepBeforeDesktopPresent, Agent agent, User user,
 			List<WorkstationEthernetDevice> ethernets) {
 		super();
 		this.name = name;
-		this.vmxFile = vmxFile;
+		this.vmxPath = vmxPath;
+		this.os = os;
 		this.sleepBeforeDesktopPresent = sleepBeforeDesktopPresent;
 		this.agent = agent;
 		this.user = user;
@@ -79,15 +84,19 @@ public class VmRunWorkstation {
 		return ethernets;
 	}
 
-	public String getVmxFile() {
-		return vmxFile;
+	public String getVmxPath() {
+		return vmxPath;
 	}
 
 	@Override
 	public String toString() {
-		return "VmRunWorkstation [name=" + name + ", vmxFile=" + vmxFile
+		return "VmRunWorkstation [name=" + name + ", vmxPath=" + vmxPath
 				+ ", agent=" + agent + ", user=" + user + ", snapshots="
 				+ snapshots + ", ethernets=" + ethernets + "]";
 	}
+
+    public OS getOs() {
+        return os;
+    }
 
 }
