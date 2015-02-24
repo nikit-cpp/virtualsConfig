@@ -24,7 +24,7 @@ public class MainWriteVirtualConfig {
 	public static void main(String[] args) throws IOException {
 		User u = new User("mylogin", "myPassword");
 		Agent a = new Agent("C:\\windows\\system32\\vmAgent.jar", "C:\\windows\\system32\\vmAgent.properties", "C:\\hwTester\\applicationLogsCleaUnit", "C:\\tmp\\logs", "C:\\Program Files\\Java\\bin\\java.exe");
-		WorkstationEthernetDevice e = new WorkstationEthernetDevice("1000", "vmnet0");
+		WorkstationEthernetDevice e = new WorkstationEthernetDevice(1, "vmnet0", "connectionType", "1000");
 		List<WorkstationEthernetDevice> eths = new ArrayList<WorkstationEthernetDevice>();
 		eths.add(e);
 		OS os = OS.WINDOWS;
