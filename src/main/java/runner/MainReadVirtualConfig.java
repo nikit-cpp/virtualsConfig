@@ -30,12 +30,17 @@ public class MainReadVirtualConfig {
 		Class[] annotated = new Class[] {VmRunWorkstation.class , User.class, WorkstationEthernetDevice.class, VirtualsXml.class};
 		xstream.processAnnotations(annotated);
 		InputStream is = new FileInputStream(MainWriteVirtualConfig.VIRTUALS_XML);
-		VirtualsXml c = (VirtualsXml) xstream.fromXML(is);
-        
-		System.out.println(c);		
-		
-        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-		validate(c, validator);		
+		try{
+    		VirtualsXml c = (VirtualsXml) xstream.fromXML(is);
+            
+    		System.out.println(c);		
+    		
+            Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+    		validate(c, validator);
+		}catch(com.thoughtworks.xstream.converters.ConversionException e){
+		    System.err.println("ERROR!!!");
+		    e.printStackTrace();
+		}
 	}
 	
 	
