@@ -1,10 +1,21 @@
-package virtualsConfig;
+package model;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Agent {
+	@NotEmpty
 	private String guestAgentExePath;
+	
+	@NotEmpty
 	private String guestAgentProperties;
+	
+	@NotEmpty
 	private String hostLogsDir;
+	
+	@NotEmpty
 	private String guestLogsDir;
+	
+	@NotEmpty
 	private String guestJavaExe;
 	
 	public Agent(String guestAgentExePath, String guestAgentProperties, String hostLogsDir,
@@ -30,5 +41,12 @@ public class Agent {
 	}
 	public String getGuestJavaExe() {
 		return guestJavaExe;
+	}
+	@Override
+	public String toString() {
+		return "Agent [guestAgentExePath=" + guestAgentExePath
+				+ ", guestAgentProperties=" + guestAgentProperties
+				+ ", hostLogsDir=" + hostLogsDir + ", guestLogsDir="
+				+ guestLogsDir + ", guestJavaExe=" + guestJavaExe + "]";
 	}
 }
